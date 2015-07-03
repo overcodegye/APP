@@ -45,7 +45,7 @@ function GuardarUsuario() {
     if (CODIGOINTERNO == "" || NOMBRE == "" || URL_SINCRONIZAR == "" || USUARIO == "" || CLAVE == "" || CLAVEADMIN == "") {alert("Debe ingresar todos los datos del formulario..."); validacion = 1;}
     if (CLAVEADMIN != admPass){alert("Error en Contrasena Administrador"); validacion = 1;}
 
-    if (validacion == 0){
+    if (validacion == 0) {
         objetoServidor($("#URL_SINCRONIZAR").val() + '/Sync/GuardarUsuario?CODIGOINTERNO=' + CODIGOINTERNO + '&NOMBRE=' + NOMBRE + '&USUARIO=' + USUARIO + '&CLAVE=' + CLAVE + '&IDGOOGLE=' + IDGOOGLE, function (ID_USUARIO) {
             firstSync(ID_USUARIO, function (res_proceso) {
                 alert(res_proceso);
