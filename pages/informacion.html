@@ -1,0 +1,16 @@
+﻿
+<script>
+    $(document).ready(function () {
+
+        BDConsulta("SELECT TOP 1 CODINTERNO FROM TBL_USUARIO", function (obj) {
+            $("#div_espera").show();
+            $("#div_informacion").load('http://186.5.36.149:94/SyncVentas/app/index?CODINTERNO=' + obj.CODINTERNO, function () {
+                $('#div_informacion').show(200);
+                $("#div_espera").hide();
+            });
+
+        });
+    });
+</script>
+
+<div id='div_informacion'></div>
