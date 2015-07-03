@@ -2,14 +2,11 @@
 <script>
     $(document).ready(function () {
 
-        BDConsulta("SELECT TOP 1 CODINTERNO FROM TBL_USUARIO", function (obj) {
-            $("#div_espera").show();
-            $("#div_informacion").load('http://186.5.36.149:94/SyncVentas/app/index?CODINTERNO=' + obj.CODINTERNO, function () {
-                $('#div_informacion').show(200);
-                $("#div_espera").hide();
-            });
+        //        BDConsulta("SELECT CODINTERNO FROM TBL_USUARIO", function (obj) {
+        var page = 'http://186.5.36.149:94/SyncVentas/app/index?CODINTERNO=1'; //+ obj.CODINTERNO;
+        $('#div_informacion').html('<iframe src="' + page + '" width="100%" height="1000px;" style="border:0px solid #FFF;"></iframe>');
 
-        });
+        //        });
     });
 </script>
 

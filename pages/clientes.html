@@ -74,11 +74,6 @@
 
         $(document).ready(function () {
             ListaClientes();
-
-            $("#div_informacion").load('http://186.5.36.149:94/SyncVentas/Prueba', function () {
-                $('#div_informacion').show(0);
-            });
-
         });
 
         function ListaClientes() {
@@ -103,7 +98,7 @@
                         html = html + "<img id='img_src_" + row.ID + "' src='" + row.IMAGEN + "' style='width:100%; border-radius:50%;'>";
                         $('#img_src_' + row.ID).attr('src', row.IMAGEN);
 
-//                        alert(row.IMAGEN);
+                        //alert(row.IMAGEN);
 //                        alert(row.FECUPDATE);
                         
                         var dataimg = 'data:image/jpeg;base64,' + row.IMAGEN;
@@ -134,4 +129,5 @@
         </div>
     </div>
 
+    <div id='div_clientes'></div>
 
