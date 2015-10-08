@@ -1,36 +1,32 @@
 
-<script>
-	function InsertElemento(texto){
-		var capa = document.getElementById("capa");
-		var h1 = document.createElement("h1");
-		h1.innerHTML = texto;
-		capa.appendChild(h1);
-		alert("Ejecutado");
-	}
 
-	function save() {
-	  var htmlContent = ["your-content-here"];
-	  var bl = new Blob(htmlContent, {type: "text/html"});
-	  var a = document.createElement("a");
-	  a.href = URL.createObjectURL(bl);
-	  a.download = "your-download-name-here.html";
-	  a.hidden = true;
-	  document.body.appendChild(a);
-	  a.innerHTML = "something random - nobody will see this, it doesn't matter what you put here";
-	  a.click();
+    <script language="Javascript">
+   
+      var newContent='';
+      newContent=newContent+'<script language="Javascript">function How() {alert("Goodbye World");}</script>';
+      newContent=newContent+'<input type="button" onClick="How();" value="Otro Elemento"/>';
+      newContent=newContent+'<input type="button" onClick="document.location.href='+"'login.html'"+'" value="Login"/>';
+      newContent=newContent+'<div><input type="text" hint="Otro Elemento"/></div>';
+      newContent=newContent+'<div><input type="text" hint="Otro Elemento"/></div>';
+      newContent=newContent+ '<div><select><option value="volvo">Volvo</option><option value="saab">Saab</option><option value="mercedes">Mercedes</option><option value="audi">Audi</option></select></div>';
+    
+      function ReplaceContent(NC) {
+      	document.write(NC);
+        document.close();
+      }
+      function Hi() {
+        ReplaceContent(newContent);
+      }
+     
+    </script>
+  
+   	<form>
+		<input type="button" onClick="Hi();" value="Añadir Elemento"/>
+		<input type="button" onClick="document.location.href='login.html" value="Login"/>
+	</form>
+	 
+	<div id="capa">
+ 		Original Content
+	</div>
+   
 
-
-	}
-
-</script>
-
-
- <form>
-<label for=texto">Texto:</label><input id="texto" type="text" size=40/>
-<input type="button" onClick="InsertElemento(getElementById('texto').value);save();" value="Añadir Elemento"/>
-</form>
- 
-<div id="capa">
-
-</div>
- 
